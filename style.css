@@ -4,6 +4,105 @@
     box-sizing: border-box;
 }
 
-body {
+@font-face {
+    font-family: "Benguiat";
+    src: url(fonts/Benguiat.ttf);
+}
 
+body {
+    background-color: #0c0102;
+    color: rgb(255, 255, 255, 0.9);
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4vw;
+    position: absolute;
+    z-index: 9;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    padding: 7vw;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
+    border: none;
+    outline: none;
+    padding: 16px 0px;
+    border-bottom: 1px solid white;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url("img/hero.webp");
+    background-position: 50% 0%;
+    background-size: cover;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7vw 7vw 7vw;
+
+    .left {
+        width: 30%;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 4px;
+        }
+
+        h1 {
+            font-size: 3.7vw;
+            font-family: "Benguiat";
+        }
+    }
+
+    .right {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        p {
+            font-size: 2vw;
+            margin-bottom: 32px;
+            text-align: end;
+        }
+    }
+}
+
+.sectionCity {
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: 40px;
+        }
+
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 52px;
+
+        .card {
+            background-image: url(img/card1.webp);
+        }
+    }
 }
