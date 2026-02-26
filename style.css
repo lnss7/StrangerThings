@@ -9,6 +9,11 @@
     src: url(fonts/Benguiat.ttf);
 }
 
+html,
+body {
+    overflow-x: hidden !important;
+}
+
 body {
     background-color: #0c0102;
     color: rgb(255, 255, 255, 0.9);
@@ -61,19 +66,40 @@ button {
 }
 
 .hero {
-    background-image: url("img/hero.webp");
     background-position: 50% 0%;
     background-size: cover;
     height: 100vh;
     align-items: center;
     justify-content: space-between;
     padding: 0 7vw 7vw 7vw;
+    position: relative;
+
+    picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+
+        }
+    }
+
+    .left,
+    .right {
+        width: 30%;
+        z-index: 3;
+    }
 
     .left {
-        width: 30%;
-
         h3 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 500;
             letter-spacing: 4px;
         }
@@ -85,7 +111,6 @@ button {
     }
 
     .right {
-        width: 30%;
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -96,6 +121,17 @@ button {
             text-align: end;
         }
     }
+}
+
+.hero:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, rgba(2, 1, 2, 0.00) 0%, #0c0102 100%);
 }
 
 .sectionCity {
@@ -162,11 +198,19 @@ button {
         margin-bottom: 10px;
     }
 
-    ul {
-        display: flex;
+    .infiniteCities {
         width: 100%;
-        justify-content: space-between;
-        margin-top: 52px;
+
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 52px;
+        }
+
+        ul:nth-child(2) {
+            display: none;
+        }
     }
 }
 
@@ -247,5 +291,195 @@ footer {
 @keyframes infiniteText {
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 1500px) {
+    .sectionCity {
+        padding: 4vw;
+    }
+}
+
+@media (max-width: 1400px) {
+    .sectionCity .cards .card {
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 4vw;
+    }
+
+    h2 {
+        font-size: 6vw;
+    }
+
+    header h2 {
+        font-size: 28px;
+        ;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 26% 4vw 0;
+
+        .left,
+        .right {
+            width: 100%;
+        }
+
+        .left {
+
+            h3,
+            h1 {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 12vw;
+            }
+        }
+
+        .right {
+            align-items: start;
+
+            p {
+                text-align: start;
+                font-size: 5vw;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .sectionCity {
+        margin-top: 80px;
+
+        button {
+            display: none;
+        }
+
+        .cards {
+            margin-top: 20px;
+            flex-direction: column;
+            gap: 20px;
+
+            .card {
+                width: 100%;
+            }
+        }
+    }
+
+    .sectionTestimonials {
+        .logos {
+
+            img:nth-child(1),
+            img:nth-child(3) {
+                width: 20%;
+            }
+
+            img:nth-child(2) {
+                width: 40%;
+            }
+        }
+
+        .testimonials {
+            flex-direction: column;
+            gap: 48px;
+
+            .testimonial {
+                width: 100%;
+            }
+        }
+    }
+
+    .sectionThanks {
+        margin: 40px 0px 60px;
+
+        h2 {
+            text-align: center;
+        }
+
+        .infiniteCities {
+            display: flex;
+            width: max-content;
+            align-self: flex-start;
+            margin-top: -20px;
+
+            ul {
+                width: max-content;
+                gap: 32px;
+                padding-right: 32px;
+                animation: infiniteText 20s infinite linear;
+            }
+
+            ul:nth-child(2) {
+                display: flex;
+            }
+        }
+    }
+
+    footer {
+        padding-top: 40px;
+
+        .footerContent {
+            padding: 4vw;
+            flex-direction: column;
+
+            .footerLogo {
+                width: 100%;
+
+                h2,
+                h3 {
+                    text-align: center;
+                }
+
+                h2 {
+                    font-size: 12vw;
+                    font-weight: 700;
+                }
+            }
+
+            .footerSections {
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: start;
+
+                .social {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 40px 0px 32px;
+                }
+
+                .institutional {
+                    width: 40%;
+                }
+
+                .mediaPartner {
+                    width: 50%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .footerLogos {
+            margin-top: 40px;
+        }
+
+        .infiniteText {
+            h3 {
+                font-size: 20vw;
+            }
+        }
+
     }
 }
