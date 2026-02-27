@@ -63,6 +63,9 @@ button {
     background-image: url("img/bg-sec2.webp");
     background-size: cover;
     background-position: center;
+    position: relative;
+    z-index: 2;
+    background-color: #0c0102;
 }
 
 .hero {
@@ -136,7 +139,7 @@ button {
 
 .sectionCity {
     flex-direction: column;
-
+    position: relative;
     .title {
         display: flex;
         justify-content: space-between;
@@ -193,6 +196,9 @@ button {
 .sectionThanks {
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
+    background-color: #0c0102;
 
     h2 {
         margin-bottom: 10px;
@@ -413,7 +419,6 @@ footer {
                 width: max-content;
                 gap: 32px;
                 padding-right: 32px;
-                animation: infiniteText 20s infinite linear;
             }
 
             ul:nth-child(2) {
