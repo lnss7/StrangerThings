@@ -59,6 +59,37 @@ button {
     cursor: pointer;
 }
 
+/* PRELOADER */
+
+#preloader {
+    width: 100%;
+    height: 100vh;
+    background-color: #0c0102;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 40vh;
+        height: auto;
+
+        path {
+            fill: rgb(168, 19, 19, 0.364);
+            stroke: rgb(168, 19, 19);
+            stroke-dasharray: 640;
+            stroke-dashoffset: 640;
+
+        }
+    }
+}
+
+@keyframes preloader {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
 .bgMonster {
     background-image: url("img/bg-sec2.webp");
     background-size: cover;
@@ -140,6 +171,7 @@ button {
 .sectionCity {
     flex-direction: column;
     position: relative;
+
     .title {
         display: flex;
         justify-content: space-between;
